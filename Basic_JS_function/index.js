@@ -139,15 +139,27 @@
 // });
 
 // もう少し発展系
-function confirmed(fn) {
-    const input = window.prompt("実行しますか？");
-    fn(input);
-};
+// function confirmed(fn) {
+//     const input = window.prompt("実行しますか？");
+//     fn(input);
+// };
 
-confirmed(function (input) {
-    if (input === "実行") {
-        console.log("リポジトリを削除");
-    }
+// confirmed(function (input) {
+//     if (input === "実行") {
+//         console.log("リポジトリを削除");
+//     }
+// });
+
+// // documentメソッド(addEventListner)
+// // ボタンが抑えれたら何かしらの処理が実行される。
+// const btn = document.getElementById("button");
+// btn.addEventListener("click", function () {
+//     console.log("フォローを解除");
+// });
+
+// JS標準メソッド(for each)
+// 配列を繰り返し表示する
+const foods = ["にんじん", "じゃがいも", "玉ねぎ"];
+foods.forEach(function (food) {
+    console.log(food);
 });
-
-
