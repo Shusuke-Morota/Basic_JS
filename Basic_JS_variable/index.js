@@ -18,3 +18,12 @@ const fooWidth = foo.offsetWidth;
 const fooHeight = foo.offsetHeight;
 // 面積を求めたくなったら、、
 const fooArea = fooWidth * fooHeight;
+
+
+// Q. どうやって変数を宣言するのか
+// A. const 変数名 = 初期値;
+//    let 変数名 = 初期値;
+//    var 変数名 = 初期値;
+const foo = 100;
+
+
