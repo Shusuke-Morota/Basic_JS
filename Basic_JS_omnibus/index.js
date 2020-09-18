@@ -1,23 +1,43 @@
+// DOM操作
 const button = document.getElementById("addBtn");
 const lists = document.getElementById("lists");
 
-button.addEventListener("click", async function () {
+// 関数
+async function getUsers() {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const users = await res.json();
-    // console.log(users);
+    return users;
+}
 
-    // DOM操作
+async function listUsers() {
+    const users = await getUsers();
+    users.forEach(addList);
+}
+
+function addList(user) {
+    const list = document.createElement("li");
+    list.innerText = user.name;
+    lists.appendChild(list);
+}
+
+// イベント
+window.addEventListener("load", listUsers);
+button.addEventListener("click", listUsers);
+
+// for文の場合の書き方
+    //     for (let index = 0; index < users.length; index++) {
+    //         const user = users[index];
+    //         const list = document.createElement("li");
+    //         list.innerText = user.name;
+    //         lists.appendChild(list);
+    //     }
+
+
+    // ユーザーのidが５以下の場合
     // users.forEach(function (user) {
-    //     const list = document.createElement("li");
-    //     list.innerText = user.name;
-    //     lists.appendChild(list);
+    //     if (user.id <= 5) {
+    //         const list = document.createElement("li");
+    //         list.innerText = user.name;
+    //         lists.appendChild(list);
+    //     }
     // });
-
-    // for文の場合の書き方
-//     for (let index = 0; index < users.length; index++) {
-//         const user = users[index];
-//         const list = document.createElement("li");
-//         list.innerText = user.name;
-//         lists.appendChild(list);
-//     }
-// });
